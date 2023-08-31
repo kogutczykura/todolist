@@ -13,6 +13,7 @@ public class Todo {
     private Long id;
     private boolean isChecked;
     private String text;
+    private Long index;
     @ManyToOne
-    private TodoList todoList;
+    private ListEntity listEntity;
 }

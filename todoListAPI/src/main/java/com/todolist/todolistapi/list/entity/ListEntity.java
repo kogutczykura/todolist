@@ -12,21 +12,21 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-public class TodoList {
+public class ListEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
 
-    @OneToMany(mappedBy = "todoList", cascade = CascadeType.ALL, fetch=FetchType.LAZY)
+    @OneToMany(mappedBy = "listEntity", cascade = CascadeType.ALL, fetch=FetchType.LAZY)
     @Fetch(value = FetchMode.SELECT)
     private List<Text> textList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "todoList", cascade = CascadeType.ALL, fetch=FetchType.LAZY)
+    @OneToMany(mappedBy = "listEntity", cascade = CascadeType.ALL, fetch=FetchType.LAZY)
     @Fetch(value = FetchMode.SELECT)
     private List<Photo> photoList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "todoList", cascade = CascadeType.ALL, fetch=FetchType.LAZY)
+    @OneToMany(mappedBy = "listEntity", cascade = CascadeType.ALL, fetch=FetchType.LAZY)
     @Fetch(value = FetchMode.SELECT)
     private List<Todo> todos = new ArrayList<>();
 

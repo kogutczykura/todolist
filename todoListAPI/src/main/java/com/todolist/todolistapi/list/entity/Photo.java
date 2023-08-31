@@ -12,6 +12,7 @@ public class Photo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String pictureURL;
+    private Long index;
     @ManyToOne
-    private TodoList todoList;
+    private ListEntity listEntity;
 }

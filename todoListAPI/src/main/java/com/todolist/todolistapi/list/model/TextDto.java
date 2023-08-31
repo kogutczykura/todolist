@@ -10,5 +10,6 @@ import lombok.*;
 public class TextDto {
     private Long id;
     private String text;
+    private Long index;
     private Long todoListId;
 }

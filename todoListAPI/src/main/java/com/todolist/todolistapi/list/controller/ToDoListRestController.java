@@ -1,7 +1,7 @@
 package com.todolist.todolistapi.list.controller;
 
-import com.todolist.todolistapi.list.model.ToDoListDto;
-import com.todolist.todolistapi.list.service.ToDoListService;
+import com.todolist.todolistapi.list.model.ListDto;
+import com.todolist.todolistapi.list.service.ListService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -11,20 +11,20 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/rest/todolist")
 public class ToDoListRestController {
     @Autowired
-    private ToDoListService toDoListService;
+    private ListService listService;
 
     @PostMapping("/")
-    public ToDoListDto newList(@RequestBody ToDoListDto toDoListDTO){
-        return toDoListService.addOrUpdate(toDoListDTO);
+    public ListDto newList(@RequestBody ListDto toDoListDTO){
+        return listService.addOrUpdate(toDoListDTO);
     }
 
     @GetMapping("/{id}")
-    public ToDoListDto getTodoList(@PathVariable long id){
-        return toDoListService.getOneById(id);
+    public ListDto getTodoList(@PathVariable long id){
+        return listService.getOneById(id);
     }
 
     @DeleteMapping("/{id}")
     public void removeTodoList(@PathVariable long id){
-        toDoListService.removeOneById(id);
+        listService.removeOneById(id);
     }
 }

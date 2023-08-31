@@ -1,8 +1,8 @@
 package com.todolist.todolistapi.list.controller;
 
-import com.todolist.todolistapi.list.model.PhotoDto;
-import com.todolist.todolistapi.list.model.PhotoListDto;
-import com.todolist.todolistapi.list.service.PhotoListService;
+import com.todolist.todolistapi.list.model.TodoDto;
+import com.todolist.todolistapi.list.model.TodoListDto;
+import com.todolist.todolistapi.list.service.TodoListService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,16 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RequiredArgsConstructor
 @RestController
-@RequestMapping("/rest/todolist/photo")
-public class ToDoListPhotoController {
+@RequiredArgsConstructor
+@RequestMapping("/rest/todolist/todo")
+public class ToDoListTodoController {
     @Autowired
-    private PhotoListService photoListService;
+    private TodoListService todoListService;
 
     @PostMapping("")
-    public List<PhotoDto> addOrUpdatePhoto(@RequestBody PhotoListDto photoDtoList){
-        return photoListService.addOrUpdate(photoDtoList);
+    public List<TodoDto> createOrUodate(@RequestBody TodoListDto todoListDto){
+        return todoListService.createOrUpdate(todoListDto);
     }
-
 }

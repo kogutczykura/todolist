@@ -13,7 +13,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ToDoListDto {
+public class ListDto {
     private Long id;
     private String title;
     private List<TextDto> textList = new ArrayList<>();

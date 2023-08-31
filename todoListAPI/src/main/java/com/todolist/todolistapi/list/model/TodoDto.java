@@ -11,5 +11,6 @@ public class TodoDto {
     private Long id;
     private boolean isChecked;
     private String text;
+    private Long index;
     private Long todoListId;
 }

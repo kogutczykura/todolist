@@ -13,6 +13,7 @@ public class Text {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String text;
+    private Long index;
     @ManyToOne
-    private TodoList todoList;
+    private ListEntity listEntity;
 }

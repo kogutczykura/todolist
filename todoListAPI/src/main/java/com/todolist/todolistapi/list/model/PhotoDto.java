@@ -1,6 +1,5 @@
 package com.todolist.todolistapi.list.model;
 
-import com.todolist.todolistapi.list.entity.TodoList;
 import lombok.*;
 
 @Getter
@@ -8,8 +7,10 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class PhotoDto {
+public class PhotoDto{
     private Long id;
     private String pictureURL;
+    private Long index;
     private Long todoListId;
+
 }
